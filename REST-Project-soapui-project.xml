@@ -86,7 +86,7 @@ def response = messageExchange.responseHeaders
 log.info response
 def status = response["#status#"]
 log.info status</scriptText></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="786d486f-f129-4576-bf15-45572214bf6a" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="route" value="rest/admin_security/logout" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>route</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:setupScript>log.info "Run this script"</con:setupScript><con:tearDownScript>testRunner.testCase.testSuite.project.testSuites["REST Library"].testCases["Reporting"].testSteps["GenerateCSVReport"].run(testRunner,context)</con:tearDownScript><con:properties/></con:testCase><con:testCase id="bc411703-460c-42e8-99db-9707b08b9901" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_021_GetListOfProducts by limit parameter" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Login creds" id="aa03a527-efcb-497d-8314-6eb6414d522a"><con:settings/><con:config><script>import jxl.*
-def filepath = "/REST Project_TC_021_Login Creds.xls"
+def filepath = "REST Project_TC_021_Login Creds.xls"
 File Excel = new File(filepath)
 Workbook wb = Workbook.getWorkbook(Excel)
 Sheet sh = wb.getSheet("Sheet1")
@@ -114,7 +114,7 @@ assert limit == expectedlimit
   <con:entry key="limit" value="2"/>
   <con:entry key="page" value="1"/>
 </con:parameters><con:parameterOrder><con:entry>route</con:entry><con:entry>limit</con:entry><con:entry>page</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:setupScript>log.info "Run this script"</con:setupScript><con:tearDownScript>testRunner.testCase.testSuite.project.testSuites["REST Library"].testCases["Reporting"].testSteps["GenerateCSVReport"].run(testRunner,context)</con:tearDownScript><con:properties/></con:testCase><con:testCase id="1bf5f77c-6841-4b24-b281-d3390ab42b1b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_022_AddNewProduct_Modify" searchProperties="true"><con:settings/><con:testStep type="groovy" name="ProductDetails" id="02328df7-aeb7-4fd1-9576-f5e8f6d7c160"><con:settings/><con:config><script>import jxl.*
-def filepath = "/REST Project_Product.xls"
+def filepath = "REST Project_Product.xls"
 File Excel = new File(filepath)
 Workbook wb = Workbook.getWorkbook(Excel)
 Sheet sh = wb.getSheet("Sheet1")
@@ -164,7 +164,7 @@ context.testCase.testSuite.project.setPropertyValue("id","$id")</script></con:co
   <con:entry key="route" value="rest/product_admin/products"/>
   <con:entry key="id" value="59"/>
 </con:parameters><con:parameterOrder><con:entry>route</con:entry><con:entry>id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="UpdatedPrice" id="6048ba2b-0e8c-43d4-ae52-277b9225dd20"><con:settings/><con:config><script>import jxl.*
-def filepath = "/REST Project_Product.xls"
+def filepath = "REST Project_Product.xls"
 File Excel = new File(filepath)
 Workbook wb = Workbook.getWorkbook(Excel)
 Sheet sh = wb.getSheet("Sheet2")
